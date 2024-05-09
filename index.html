@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Builder Max</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+
+      <style>
+         @font-face {
+            font-family: 'mariana';
+            src: url('/font/marianafamily.ttf');
+         }
+         @media only screen and (max-width: 480px) {
+            .logo{
+               width: 220px;
+            }
+            .header_top_section{
+               margin-bottom: -23px;
+            }
+         }
+
+         @media only screen and (max-width: 768px) {
+            .logo{
+               width: 220px;
+            }
+            .header_top_section{
+               margin-bottom: -26px;
+            }
+         }
+
+         @media only screen and (max-width: 1024px) {
+            .logo{
+               width: 220px;
+            }
+            .header_top_section{
+               margin-bottom: -26px;
+            }
+         }
+
+         @media only screen and (min-width: 1024px) {
+            
+            .logo{
+               width: 250px;
+            }
+            #process-nav{
+               margin-right: 30px;
+            }
+            #form-main-image{
+               width: 350px;
+               margin-top: 40px;
+            }
+            .header_top_section{
+               height: 80px;
+            }
+            .banner_section{
+               height: 650px;
+            }
+         }
+         #dropdownContent {
+            display: none; /* Initially hide the dropdown content */
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+      </style>
+   </head>
+   <body>
+      <!-- header top section start -->
+      <div class="header_top_section">
+         <div class="container-fluid" style="margin-top: -30px;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Our Projects</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Cost</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Distinct</a>
+                     </li>
+                     <li class="nav-item" >
+                        <a class="nav-link" id="process-nav" href="#">Process</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="quote_btn"><a href="#">Contact Us</a></div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+
+      </div>
+      <!-- header top section start -->
+      <!-- header section start -->
+      <div class="header_section">
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <form style="background-color: rgb(255, 255, 255);padding: 20px;text-align: center;border-radius: 20px;" id="form-main-image">
+                                 <div class="mb-3">
+                                   <label for="exampleInputEmail1" class="form-label" style="font-weight:  bold;color: black;font-size: 17px;font-family: mariana;">Book FREE Appointment</label>
+                                   <div id="emailHelp" class="form-text" style="color: #6C758E;font-family: mariana;">Best Quality Construction At Affordable Rates</div>                                   
+                                 </div>
+
+                                 <div class="mb-3" style="font-family: mariana;color: #6C758E;">
+                                    <input type="text" placeholder="Full name*" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+
+                                 <div class="mb-3" style="font-family: mariana;color: #6C758E;">
+                                   <input type="number" placeholder="Mobile number*" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 </div>
+
+                                 <div class="mb-3" style="font-family: mariana;color: #6C758E;">
+                                    <input type="text" placeholder="Location of your plot*" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+                                  <div style="color: #6C758E;font-family: mariana;">                                    
+                                    <button type="submit"  style="width:100%;background-color:#F05A29;outline-color: #F05A29;border-radius: 4px;padding: 5px;color: white;font-weight: bold;">Start Your Construction</button>
+                                    <br>
+                                    <p style="text-align: start;font-size: 12px;line-height: 15px;color: #6C758E;">*
+                                       By submitting this form, I confirm that I have read and agreed to accept Brick&Bolt's privacy policy</p>
+                                  </div>
+                                 
+                               </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        <!-- banner section end -->
+      </div>
+      <!-- header section end -->
+
+
+
+      <div>
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-12">
+                     <h1 class="services_taital" style="font-size: 25px;margin-top: 40px;">Cost Estimation<br> Of Constructing A House In</h1>
+                     <p class="services_text_1" style="margin-top: 40px;">
+                         <select id="dropdown">
+                             <option value="option1">Benglaru</option>
+                             <option value="option2">Hydrabad</option>
+                             <option value="option3">Chennai</option>
+                         </select>
+                     </p>
+                     <div style="align-items: center;margin-top: 20px;">
+                         <table class="table table-striped" style="font-family: mariana;width: 800px; margin: 0 auto;">
+                             <thead>
+                                 <tr>
+                                     <th>Basic</th>
+                                     <th id="basic" style="width: 250px;text-align: end;">₹ 1810 /sqft (Incl. GST)</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <th>Classic</th>
+                                     <td id="class" style="width: 10px;text-align: end;">₹ 1940 /sqft (Incl. GST)</td>
+                                 </tr>
+                                 <tr>
+                                     <th>Premium</th>
+                                     <td id="premium" style="width: 10px;text-align: end;">₹ 2250 /sqft (Incl. GST)</td>
+                                 </tr>
+                                 <tr>
+                                     <th>Royale</th>
+                                     <td id="royal" style="width: 10px;text-align: end;">₹ 2480 /sqft (Incl. GST)</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+
+
+
+        
+      </div>
+
+
+            <!-- projects section start -->
+            <div class="projects_section layout_padding" style="background-color: #FFF6F4;margin-top: 50px;">
+               <div class="container" style="margin-top: -50px;">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h1 class="services_taital">Our Projects</h1>
+                        <p class="services_text_1">From a couple to Large Indian Family, we have houses built with emotions for everyone</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="services_section_2">
+                  <div class="row">
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/img-1.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/img-1.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/img-1.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/img-1.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- projects section end -->
+
+
+
+
+
+
+
+            
+      <!-- services section start -->
+      
+
+      <script>
+         // Get the dropdown element
+         var dropdown = document.getElementById('dropdown');
+         // Get the dropdown content element
+        var basic = document.getElementById('basic')
+        var classic = document.getElementById('classic')
+        var premium = document.getElementById('premium')
+        var royal = document.getElementById('royal')
+      
+         // Add event listener to the dropdown
+         dropdown.addEventListener('change', function() {
+             // Get the selected value
+             var selectedOption = dropdown.value;
+      
+             // Update the dropdown content based on the selected value
+             if (selectedOption === 'option1') {
+               basic.textContent = '₹ 1810 /sqft (Incl. GST)';
+               classic.textContent = '₹ 1940  /sqft (Incl. GST)';
+               premium.textContent = '₹ 2250  /sqft (Incl. GST)';
+               royal.textContent = '₹ 2480  /sqft (Incl. GST)';
+             } else if (selectedOption === 'option2') {
+               basic.textContent = '₹ 1890 /sqft (Incl. GST)';
+               classic.textContent = '₹ 2050 /sqft (Incl. GST)';
+               premium.textContent = '₹ 2440 /sqft (Incl. GST)';
+               royal.textContent = '₹ 2660 /sqft (Incl. GST)';
+             } else if (selectedOption === 'option3') {
+               basic.textContent = '₹ 2150  /sqft (Incl. GST)';
+               classic.textContent = '₹ 2370  /sqft (Incl. GST)';
+               premium.textContent = '₹ 2630  /sqft (Incl. GST)';
+               royal.textContent = '₹ 2890  /sqft (Incl. GST)';
+             }
+      
+             // Show the dropdown content
+             dropdownContent.style.display = 'block';
+         });
+      </script>
+      
+
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      
+   </body>
+</html>
