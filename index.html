@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>KSR</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+
+     </script>
+      <style>
+         
+         .wrapper {
+         max-width: 75%;
+         margin: auto;
+         }
+
+         .wrapper > p,
+         .wrapper > h1 {
+         margin: 1.5rem 0;
+         text-align: center;
+         }
+
+         .wrapper > h1 {
+         letter-spacing: 3px;
+         }
+
+         .accordion {
+         background-color: white;
+         color: rgba(0, 0, 0, 0.8);
+         cursor: pointer;
+         font-size: 1rem;
+         width: 100%;
+         padding: 2rem 2.5rem;
+         border: none;
+         outline: none;
+         transition: 0.4s;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         font-weight: bold;
+         }
+
+         .accordion i {
+         font-size: 1rem;
+         }
+
+         .accordion:hover {
+         background-color: #FFF6F4;
+         }
+         .pannel {
+         padding: 0 2rem 2.5rem 2rem;
+         background-color: white;
+         overflow: hidden;
+         background-color: #FFF6F4;
+         display: none;
+         }
+         .pannel p {
+         color: rgba(0, 0, 0, 0.7);
+         font-size: 1rem;
+         line-height: 1.4;
+         }
+
+         .faq {
+         border: 1px solid rgba(0, 0, 0, 0.2);
+         margin: 10px 0;
+         }
+         .faq.active {
+         border: none;
+         }
+
+         @font-face {
+            font-family: 'mariana';
+            src: url('font/marianafamily.ttf');
+         }
+         @media only screen and (max-width: 480px) {
+            .map_part{
+               width: 250px;
+            }
+            .logo{
+               width: 220px;
+            }
+            .header_top_section{
+               margin-bottom: -23px;
+            }
+         }
+
+         @media only screen and (max-width: 768px) {
+            .logo{
+               width: 220px;
+            }
+            .header_top_section{
+               margin-bottom: -26px;
+            }
+         }
+
+         @media only screen and (max-width: 1024px) {
+            .logo{
+               width: 220px;
+            }
+            .header_top_section{
+               margin-bottom: -26px;
+            }
+         }
+
+         @media only screen and (min-width: 1024px) {
+            
+            .logo{
+               width: 250px;
+            }
+            #process-nav{
+               margin-right: 30px;
+            }
+            #form-main-image{
+               width: 350px;
+               margin-top: 40px;
+            }
+            .header_top_section{
+               height: 80px;
+            }
+            .banner_section{
+               height: 650px;
+            }
+         }
+         #dropdownContent {
+            display: none; /* Initially hide the dropdown content */
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .center {
+            margin: 0 auto; /* Auto margin to horizontally center the element */
+            width: 80%; /* Adjust the width as needed */
+            font-family: mariana;
+            margin-top: 40px;
+         }
+         .project-image-heading{
+            font-weight: bold;
+            color: #666666;
+         }
+         .cat{
+            color: black;
+         }
+
+      </style>
+   </head>
+   <body>
+      <!-- header top section start -->
+      <div class="header_top_section">
+         <div class="container-fluid" style="margin-top: -30px;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#cose-section">Cost</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#project-section">Our Projects</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#distinct-section">Distinct</a>
+                     </li>
+                     <li class="nav-item" >
+                        <a class="nav-link" href="#process-section">Process</a>
+                     </li>
+                     <li class="nav-item" >
+                        <a class="nav-link" id="process-nav" href="#faqs-section">FAQs</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="quote_btn"><a href="#contact-us-section">Contact Us</a></div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+
+      </div>
+      <!-- header top section start -->
+      <!-- header section start -->
+      <div class="header_section">
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <form style="background-color: rgb(255, 255, 255);padding: 20px;text-align: center;border-radius: 20px;" id="form-main-image">
+                                 <div class="mb-3">
+                                   <label for="exampleInputEmail1" class="form-label" style="font-weight:  bold;color: black;font-size: 17px;font-family: mariana;">Book FREE Appointment</label>
+                                   <div id="emailHelp" class="form-text" style="color: #6C758E;font-family: mariana;">Best Quality Construction At Affordable Rates</div>                                   
+                                 </div>
+
+                                 <div class="mb-3" style="font-family: mariana;color: #6C758E;">
+                                    <input type="text" placeholder="Full name*" class="form-control" id="name" required aria-describedby="emailHelp">
+                                  </div>
+
+                                 <div class="mb-3" style="font-family: mariana;color: #6C758E;">
+                                   <input type="number" placeholder="Mobile number*" class="form-control" id="phonenumber" required aria-describedby="emailHelp">
+                                 </div>
+
+                                 <div class="mb-3" style="font-family: mariana;color: #6C758E;">
+                                    <input type="text" placeholder="Location of your plot*" class="form-control" id="location" required aria-describedby="emailHelp">
+                                  </div>
+                                  <div style="color: #6C758E;font-family: mariana;">                                    
+                                    <button type="submit"  style="width:100%;background-color:#F05A29;outline-color: #F05A29;border-radius: 4px;padding: 5px;color: white;font-weight: bold;" id="submitForm">Start Your Construction</button>
+                                    <br>
+                                    <p style="text-align: start;font-size: 12px;line-height: 15px;color: #6C758E;">*
+                                       By submitting this form, I confirm that I have read and agreed to accept Brick&Bolt's privacy policy</p>
+                                  </div>
+                                 
+                               </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        <!-- banner section end -->
+      </div>
+      <!-- header section end -->
+
+
+
+      <div >
+         <div class="container">
+             <div class="row">
+                 <div id="cose-section" class="col-sm-12">
+                     <h1 class="services_taital" style="font-size: 25px;margin-top: 40px;">Cost Estimation<br> Of Constructing A House In</h1>
+                     <p class="services_text_1" style="margin-top: 40px;">
+                         <select id="dropdown">
+                             <option value="option1">Bengaluru</option>
+                             <option value="option2">Hyderabad</option>
+                             <option value="option3">Chennai</option>
+                         </select>
+                     </p>
+                     <div  style="align-items: center;margin-top: 20px;">
+                         <table class="table table-striped" style="font-family: mariana;width: 800px; margin: 0 auto;">
+                             <thead>
+                                 <tr>
+                                     <th>Basic</th>
+                                     <th id="basic" style="width: 250px;text-align: end;">₹ 1810 /sqft (Incl. GST)</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <th>Classic</th>
+                                     <td id="class" style="width: 10px;text-align: end;">₹ 1940 /sqft (Incl. GST)</td>
+                                 </tr>
+                                 <tr>
+                                     <th>Premium</th>
+                                     <td id="premium" style="width: 10px;text-align: end;">₹ 2250 /sqft (Incl. GST)</td>
+                                 </tr>
+                                 <tr>
+                                     <th>Royale</th>
+                                     <td id="royal" style="width: 10px;text-align: end;">₹ 2480 /sqft (Incl. GST)</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+
+
+
+        
+      </div>
+
+
+            <!-- projects section start -->
+            <div id="project-section" class="projects_section layout_padding" style="background-color: #FFF6F4;margin-top: 50px;">
+               <div class="container" style="margin-top: -50px;">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h1 class="services_taital">Our Projects</h1>
+                        <p class="services_text_1">From a couple to Large Indian Family, we have houses built with emotions for everyone</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="services_section_2">
+                  <div class="row">
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/1.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/2.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/3.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="container_main">
+                           <img src="images/4.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-sm-6" style="margin-top: 30px;">
+                        <div class="container_main">
+                           <img src="images/5.png" alt="" class="image">
+                           <div class="overlay">
+                              <div class="text">
+                                 <h4 class="some_text"><i class="fa fa-link" aria-hidden="true"></i></h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="project_main">
+                           <h2 class="work_text">Home Work</h2>
+                           <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- projects section end -->
+
+
+
+
+
+
+
+            
+      <!-- services section start -->
+      <div class="services_section layout_padding" id="distinct-section">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital">Distinct</h1>
+                  <p class="services_text_1">We serve our customers better than others</p>
+               </div>
+            </div>
+            <div class="services_section_2" style="display: flex; justify-content: center; align-items: center;">
+               <div class="row" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                   <div class="col" style="margin-right: 20px; text-align: center;">
+                       <img src="images/time.png" width="70px">
+                       <p style="width: 100%; max-width: 150px; margin: 0 auto; font-weight: bold; font-size: 16px;">Guaranteed</p>
+                       <p style="width: 120px; max-width: 150px; margin: 0 auto;">On time delivery</p>
+                   </div>
+                   <div class="col" style="text-align: center;">
+                       <img src="images/money.png" width="70px">
+                       <p style="width: 100%; max-width: 150px; margin: 0 auto; font-weight: bold; font-size: 16px;">Zero</p>
+                       <p style="width: 100%; max-width: 150px; margin: 0 auto;">Cost Overruns</p>
+                   </div>
+               </div>
+           </div>
+           
+
+           <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div style="align-items: center;margin-top: 40px;margin-bottom: 50px;">
+                            <table class="table table-borderless" style="font-family: mariana;width: 800px; margin: 0 auto;">
+                                <thead>
+                                    <tr>
+                                       <th colspan="2" style="text-align: center;font-weight: bold;color: black;font-size: 17px;">KSR Construction</th>
+                                    
+                                       <td colspan="2" style="text-align: center;font-weight: bold;color: black;font-size: 17px;">Contractors</td>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                       <th><img src="images/tick.png" width="25px"></th>
+                                       <td>ESCROW Facility for 100% Money Safety</td>
+                                       <td style="border-left: 3px dotted #F05A29;padding-left: 5px;"><img src="images/crose.png" width="25px"></td>
+                                       <th>No Safety of Money & High Risk</th>
+                                    </tr>
+                                    <tr>
+                                       <th><img src="images/tick.png" width="25px"></th>
+                                       <td>Top Quality Assurance with QASCON</td>
+                                       <td style="border-left: 3px dotted #F05A29;padding-left: 5px;"><img src="images/crose.png" width="25px"></td>
+                                       <td>Improper quality checks</td>
+                                    </tr>
+                                    <tr>
+                                       <th><img src="images/tick.png" width="25px"></th>
+                                       <td style="padding-right: 5px;">Monitor The Progress From Home using App</td>
+                                       <td style="border-left: 3px dotted #F05A29;padding-left: 5px;"><img src="images/crose.png" width="25px"></td>
+                                       <td>No App. Have to go to construction site</td>
+                                    </tr>
+                                    <tr>
+                                       <th><img src="images/tick.png" width="25px"></th>
+                                       <td>ZERO Cost Overruns</td>
+                                       <td style="border-left: 3px dotted #F05A29;padding-left: 5px;"><img src="images/crose.png" width="25px"></td>
+                                       <td>Costs keep increasing</td>
+                                   </tr>
+                                   <tr>
+                                       <th><img src="images/tick.png" width="25px"></th>
+                                       <td>Guaranteed On Time Delivery</td>
+                                       <td style="border-left: 3px dotted #F05A29;padding-left: 5px;"><img src="images/crose.png" width="25px"></td>
+                                       <td>No guarantee on timely delivery</td>
+                                   </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+           
+         </div>
+      </div>
+      <!-- services section end -->
+
+
+      <!-- testimonial section start -->
+      <div id="process-section" class="testimonial_section layout_padding" style="background-color: #FFF6F4;">
+         <div class="container">
+            <h1 class="testimonial_taital" style="color: black;">How it works</h1>
+            <p class="services_text_1">Our house construction steps are simple and easy to understand: Plan - Build - Track - Settle in.</p>
+            <div id="costum_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="row">
+                        <div class="col-md-12">
+                          <div class="testimonial_section_2">
+                              <h2 class="client_name_text" style="color: black;margin-bottom: -30px;">1. Raise a Request </span></h2>
+                              <img src="images/process/1.png" width="300px">
+                          </div>
+                          <div class="testimonial_section_2">
+                              <p class="textimonial_text"><b style="font-weight: bold;">Raise a Request</b><br>Raise a service request or call us at 90000000000. Our technical excpert will get in touch with you.</p>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="testimonial_section_2">
+                              <h2 class="client_name_text" style="color: black;margin-bottom: -30px;">2. Meet our Expert </span></h2>
+                              <img src="images/process/2.png" width="300px">
+                          </div>
+                          <div class="testimonial_section_2">
+                              <p class="textimonial_text"><b style="font-weight: bold;">Meet our Expert</b><br>Our experts visit you to take all the requirements and submit exhaustive specifications.</p>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="testimonial_section_2">
+                              <h2 class="client_name_text" style="color: black;margin-bottom: -30px;">3. Book with Us </span></h2>
+                              <img src="images/process/3.png" width="300px">
+                          </div>
+                          <div class="testimonial_section_2">
+                              <p class="textimonial_text"><b style="font-weight: bold;">Book with Us</b><br>Good to go. You pay 5% of the estimated project cost as Booking Amount.</p>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="testimonial_section_2">
+                              <h2 class="client_name_text" style="color: black;margin-bottom: -30px;">4. Receive designs </span></h2>
+                              <img src="images/process/4.png" width="300px">
+                          </div>
+                          <div class="testimonial_section_2">
+                              <p class="textimonial_text"><b style="font-weight: bold;">Receive designs</b><br>Our Professional will provide exhaustive drawings and designs till the customer is fully satisfied. Designs include floot plans, 3D elevations, electrical, plumbing and structural designs.</p>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="testimonial_section_2">
+                              <h2 class="client_name_text" style="color: black;margin-bottom: -30px;">5. Track & Transact </span></h2>
+                              <img src="images/process/5.png" width="300px">
+                          </div>
+                          <div class="testimonial_section_2">
+                              <p class="textimonial_text"><b style="font-weight: bold;">Track & Transact</b><br>To ensure absolute trust, KSR construction provides an escrow model where you transfer the ammount for dtage of the project.</p>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="testimonial_section_2">
+                              <h2 class="client_name_text" style="color: black;margin-bottom: -30px;">6. Settle In </span></h2>
+                              <img src="images/process/6.png" width="300px">
+                          </div>
+                          <div class="testimonial_section_2">
+                              <p class="textimonial_text"><b style="font-weight: bold;">Settle In</b><br>We make sure you are well settled in your new home. Our jouney together doesn't end here. We provide 5 years of warranty.</p>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <a style="margin-top: 50px;" class="carousel-control-prev" href="#costum_slider" role="button" data-slide="prev">
+                 <i class="fa fa-angle-left"></i>
+               </a>
+               <a style="margin-top: 50px;" class="carousel-control-next" href="#costum_slider" role="button" data-slide="next">
+                 <i class="fa fa-angle-right"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="wrapper" style="margin-bottom: 30px;">
+         <h1 class="testimonial_taital" style="color: black;">FAQs</h1>
+         <p class="services_text_1">Frequently Asked Questions</p>
+   
+         <div class="faq"  id="faqs-section">
+           <button class="accordion">
+             What is Krushi?
+             <i class="fa-solid fa-chevron-down"></i>
+           </button>
+           <div class="pannel">
+             <p>
+               Krushi is a Public Charitable Trust designed to carry out farming on
+               extensive scale Natural & Sustainable methods.
+             </p>
+           </div>
+         </div>
+   
+         <div class="faq">
+           <button class="accordion">
+             How does it work?
+             <i class="fa-solid fa-chevron-down"></i>
+           </button>
+           <div class="pannel">
+             <p>
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
+               saepe molestiae distinctio asperiores cupiditate consequuntur dolor
+               ullam, iure eligendi harum eaque hic corporis debitis porro
+               consectetur voluptate rem officiis architecto.
+             </p>
+           </div>
+         </div>
+   
+         <div class="faq">
+           <button class="accordion">
+             What are the major challanges of current agriculture?
+             <i class="fa-solid fa-chevron-down"></i>
+           </button>
+           <div class="pannel">
+             <p>
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
+               saepe molestiae distinctio asperiores cupiditate consequuntur dolor
+               ullam, iure eligendi harum eaque hic corporis debitis porro
+               consectetur voluptate rem officiis architecto.
+             </p>
+           </div>
+         </div>
+   
+         <div class="faq">
+           <button class="accordion">
+             How does the Krushi address the above challanges?
+             <i class="fa-solid fa-chevron-down"></i>
+           </button>
+           <div class="pannel">
+             <p>
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
+               saepe molestiae distinctio asperiores cupiditate consequuntur dolor
+               ullam, iure eligendi harum eaque hic corporis debitis porro
+               consectetur voluptate rem officiis architecto.
+             </p>
+           </div>
+         </div>
+   
+         <div class="faq">
+           <button class="accordion">
+             How can I be a part of Krushi?
+             <i class="fa-solid fa-chevron-down"></i>
+           </button>
+           <div class="pannel">
+             <p>
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
+               saepe molestiae distinctio asperiores cupiditate consequuntur dolor
+               ullam, iure eligendi harum eaque hic corporis debitis porro
+               consectetur voluptate rem officiis architecto.
+             </p>
+           </div>
+         </div>
+   
+         <div class="faq">
+           <button class="accordion">
+             How does it work?
+             <i class="fa-solid fa-chevron-down"></i>
+           </button>
+           <div class="pannel">
+             <p>
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
+               saepe molestiae distinctio asperiores cupiditate consequuntur dolor
+               ullam, iure eligendi harum eaque hic corporis debitis porro
+               consectetur voluptate rem officiis architecto.
+             </p>
+           </div>
+         </div>
+       </div>
+
+
+
+
+      <!-- testimonial section end -->
+      <!-- contact section start -->
+      <div id="contact-us-section" class="contact_section layout_padding" id="contact-section" style="background-color: #FFF6F4;">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="contact_taital">Contact Us</h1>
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div class="contact_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <form id="contactForm">
+                        <div class="mail_section_1">
+                           <input type="text" class="mail_text" placeholder="Name" id="contactName" name="Name">
+                           <input type="text" class="mail_text" placeholder="Phone Number" id="contactPhoneNumber" name="Phone Number"> 
+                           <input type="text" class="mail_text" placeholder="Email" id="contactEmailAddress" name="Email">
+                           <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
+                           <div class="send_bt" >
+                              <button type="submit" style="width: 150px;" id="submitContact"  ><a style="color: white;" >SEND</a></button></div>
+                           </div>
+                     </form>
+                  </div>
+                  <div class="col-md-6 padding_left_15">
+                     <div class="contact_img"><img src="images/contact-img.png"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+      <!-- contact section end -->
+      <!-- footer section start -->
+      <div class="footer_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="location_text">
+                     <ul>
+                        <li>
+                           <a href="#"><span class="padding_15"><i class="fa fa-mobile" aria-hidden="true"></i></span> <br>Call +01 1234567890</a>
+                        </li>
+                        <li class="active">
+                           <a href="#"><span class="padding_15"><i class="fa fa-envelope" aria-hidden="true"></i></span> <br>demo@gmail.com</a>
+                        </li>
+                        <li>
+                           <a href="#map-canvas"><span class="padding_15"><i class="fa fa-map-marker" aria-hidden="true"></i></span> <br>Location</a>
+                        </li> 
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="footer_section_2">
+               <div class="row">
+                  <div class="col-md-4">
+                     <h2 class="useful_text">QUICK LINKS</h2>
+                     <div class="footer_menu">
+                        <ul>
+                           <li><a href="#">Home</a></li>
+                           <li><a href="#cose-section">Cost </a></li>
+                           <li><a href="#project-section">Our Projects </a></li>
+                           <li><a href="#distinct-section">Distinct </a></li>
+                           <li><a href="#process-section">Process </a></li>
+                           <li><a href="#faqs-section">FAQs </a></li>
+                           <li><a href="#contact-us-section">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <h2 class="useful_text">Work Portfolio</h2>
+                     <p class="lorem_text">KSR Construction is India's No.1 tech-enabled construction company that aims to make construction simple, transparent, and reliable. We provide end-to-end aka design-to-build construction services. We execute projects on a turnkey basis and provide real-time tracking, communication, quality checks, and updates on projects from day one till the handover of the keys. Our solution offers money safety to the customers, assured quality, transparency at every stage of construction</p>
+                  </div>
+                  <div class="col-md-4">
+                     <p><iframe id="map-canvas" class="map_part" width="400"  height="300"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=218 2 main 1cross silico Suncity layout Heelalige village,Chandapura,Anekal talk&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://www.googlemapsgenerator.com">html embed google maps</a> and <a href="https://yatzyregler.com/da/">yatzy blok</a></iframe></p>
+                  </div>
+               </div>
+            </div>
+            <div class="social_icon">
+               <ul>
+                  <li>
+                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   
+
+      <script>
+         var acc = document.getElementsByClassName("accordion");
+         var i;
+   
+         for (i = 0; i < acc.length; i++) {
+           acc[i].addEventListener("click", function () {
+             this.classList.toggle("active");
+             this.parentElement.classList.toggle("active");
+   
+             var pannel = this.nextElementSibling;
+   
+             if (pannel.style.display === "block") {
+               pannel.style.display = "none";
+             } else {
+               pannel.style.display = "block";
+             }
+           });
+         }
+       </script>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+      <script>
+         const firebaseConfig = {
+         apiKey: "AIzaSyBiE6xezgVzXAFlgla-beM8oOKxDM6dldY",
+         authDomain: "ksrconstruction-3288b.firebaseapp.com",
+         databaseURL: "https://ksrconstruction-3288b-default-rtdb.firebaseio.com",
+         projectId: "ksrconstruction-3288b",
+         storageBucket: "ksrconstruction-3288b.appspot.com",
+         messagingSenderId: "587815191000",
+         appId: "1:587815191000:web:d1e83809b5c5fa69e372ad"
+         };
+
+         firebase.initializeApp(firebaseConfig);
+
+         var formResponseDb = firebase.database().ref("formData");
+
+         document.getElementById("form-main-image").addEventListener('submit', submitForm);
+
+         function submitForm(e) {
+            e.preventDefault();
+
+            var name = getElementValue('name');
+            var phoneNum = getElementValue('phonenumber');
+            var location = getElementValue('location');
+
+            saveData(name, phoneNum, location);
+         }
+
+         const saveData = (name, phoneNum, location) => {
+            var newFormData = formResponseDb.push();
+            newFormData.set({
+               Name: name,
+               PhoneNumber: phoneNum,
+               Location: location
+            });
+            document.getElementById('form-main-image').reset();
+         }
+
+         const getElementValue = (id) => {
+            return document.getElementById(id).value;
+         }
+
+         var contactFormResponseDb = firebase.database().ref("contactFormData");
+
+         document.getElementById("contactForm").addEventListener('submit', submitContactForm);
+
+         function submitContactForm(e) {
+            e.preventDefault();
+
+            var name = getElementValue('contactName');
+            var phoneNum = getElementValue('contactPhoneNumber');
+            var mail = getElementValue('contactEmailAddress');
+            var comment = getElementValue('comment');
+
+            saveContactData(name, phoneNum, mail, comment);
+         }
+
+         const saveContactData = (name, phoneNum, mail, comment) => {
+            var newFormData = contactFormResponseDb.push();
+            newFormData.set({
+               Name: name,
+               PhoneNumber: phoneNum,
+               Mail: mail,
+               Comment: comment
+            });
+            document.getElementById('contactForm').reset();
+         }
+
+
+
+
+      </script>
+
+
+      <script>
+         // Get the dropdown element
+         var dropdown = document.getElementById('dropdown');
+         // Get the dropdown content element
+        var basic = document.getElementById('basic')
+        var classic = document.getElementById('classic')
+        var premium = document.getElementById('premium')
+        var royal = document.getElementById('royal')
+      
+         // Add event listener to the dropdown
+         dropdown.addEventListener('change', function() {
+             // Get the selected value
+             var selectedOption = dropdown.value;
+      
+             // Update the dropdown content based on the selected value
+             if (selectedOption === 'option1') {
+               basic.textContent = '₹ 1810 /sqft (Incl. GST)';
+               classic.textContent = '₹ 1940  /sqft (Incl. GST)';
+               premium.textContent = '₹ 2250  /sqft (Incl. GST)';
+               royal.textContent = '₹ 2480  /sqft (Incl. GST)';
+             } else if (selectedOption === 'option2') {
+               basic.textContent = '₹ 1890 /sqft (Incl. GST)';
+               classic.textContent = '₹ 2050 /sqft (Incl. GST)';
+               premium.textContent = '₹ 2440 /sqft (Incl. GST)';
+               royal.textContent = '₹ 2660 /sqft (Incl. GST)';
+             } else if (selectedOption === 'option3') {
+               basic.textContent = '₹ 2150  /sqft (Incl. GST)';
+               classic.textContent = '₹ 2370  /sqft (Incl. GST)';
+               premium.textContent = '₹ 2630  /sqft (Incl. GST)';
+               royal.textContent = '₹ 2890  /sqft (Incl. GST)';
+             }
+      
+             // Show the dropdown content
+             dropdownContent.style.display = 'block';
+         });
+      </script>
+      
+
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      
+   </body>
+</html>
